@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg,rgba(0, 81, 255, 0.596),rgba(255, 72, 0, 0.573),rgba(120, 1, 175, 0.596));
+}
+
+.card{
+    cursor: pointer;
+    margin:0 42px;
+    position: relative;
+    width: 300px;
+    height: 350px;
+}
+
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.card .back img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.card .front h3{
+   width: 100%;
+   height: 45px;
+   position: absolute;
+   bottom: 0;
+   font-size: x-large;
+   text-align: center;
+line-height: 45px;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.845);
+}
+.card .front{
+  
+    transform: perspective(600px)rotateY(0deg);
+    box-shadow: 0 5px 10px;
+    background-color: #00000097;
+ 
+}
+.card .back{
+    box-shadow: 0 5px 10px black;
+
+        transform: perspective(600px)rotateY(180deg);
+background-color: rgb(3, 35, 54);    
+/* padding: 15px; */
+color: #f3f3f3;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+text-align: center;
+}
+.card:hover .front{
+        transform: perspective(600px)rotateY(180deg);
+
+}
+.card:hover .back{
+        transform: perspective(600px)rotateY(360deg);
+
+}
